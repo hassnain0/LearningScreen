@@ -16,15 +16,19 @@ function App(): React.JSX.Element {
       <Text style={styles.TextContainer}>It's your name.</Text>
       <Text style={styles.TextContainer}>Own it.</Text>
       <Text style={{ color: 'white', fontWeight: '400', textAlign: 'center', marginTop: 10, }}>Unlock the Avater State by forging a digital identity</Text>
-      <View style={{ flexDirection: 'row', alignSelf: 'left' }}>
+      <View style={{ flexDirection: 'row', marginLeft: 32, marginTop: 20 }}>
         <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 20 }}>Player Tag</Text>
         <View style={{ position: 'relative', marginLeft: 5 }}>
-          <Image source={require('./assets/Ellipse.png')} style={{ width: 20, height: 20 }} />
-          <Image source={require('./assets/i.png')} style={{ position: 'absolute', top: 20, width: 3, height: 10 }} />
+          <View style={{ position: 'relative' }}>
+            <Image source={require('./assets/Ellipse.png')} style={{ width: 20, height: 20 }} />
+            <Image source={require('./assets/i.png')} style={{ position: 'absolute', top: 5, left: 8, width: 4, height: 12 }} />
+          </View>
         </View>
       </View>
-      <TextInput style={{ width: 200, borderRadius: 10, borderColor: 'grey' }} placeholder='check player tag availability' placeholderTextColor={"grey"}></TextInput>
+      <TextInput style={{ borderWidth: 1, alignSelf: 'center', width: 350, top: 5, borderRadius: 10, borderColor: 'grey', }} placeholder='check player tag availability' placeholderTextColor={"grey"}></TextInput>
+      <Text style={{ color: 'grey', fontSize: 12, textAlign: 'center', marginTop: 5 }}>Must be xx character and xxx</Text>
     </View>
+
   )
 }
 const styles = StyleSheet.create({
