@@ -1,21 +1,12 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
 import {
   Image,
-
   StatusBar,
   StyleSheet,
   Text,
+  TextInput,
   View,
 } from 'react-native';
-
-
 
 function App(): React.JSX.Element {
   return (
@@ -25,19 +16,17 @@ function App(): React.JSX.Element {
       <Text style={styles.TextContainer}>It's your name.</Text>
       <Text style={styles.TextContainer}>Own it.</Text>
       <Text style={{ color: 'white', fontWeight: '400', textAlign: 'center', marginTop: 10, }}>Unlock the Avater State by forging a digital identity</Text>
-      <View style={{ flex: 1, flexDirection: 'row' }}>
+      <View style={{ flexDirection: 'row', alignSelf: 'left' }}>
         <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 20 }}>Player Tag</Text>
-        <View style={{ position: 'relative' }}>
+        <View style={{ position: 'relative', marginLeft: 5 }}>
           <Image source={require('./assets/Ellipse.png')} style={{ width: 20, height: 20 }} />
-          <Image source={require('./assets/i.png')} style={{ position: 'absolute', top: 20, left: 20, width: 10, height: 10 }} />
+          <Image source={require('./assets/i.png')} style={{ position: 'absolute', top: 20, width: 3, height: 10 }} />
         </View>
       </View>
+      <TextInput style={{ width: 200, borderRadius: 10, borderColor: 'grey' }} placeholder='check player tag availability' placeholderTextColor={"grey"}></TextInput>
     </View>
-
-
   )
 }
-
 const styles = StyleSheet.create({
 
   TextContainer: {
