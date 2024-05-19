@@ -5,6 +5,7 @@ import {
   StyleSheet,
   Text,
   TextInput,
+  TouchableOpacity,
   View,
 } from 'react-native';
 
@@ -15,7 +16,7 @@ function App(): React.JSX.Element {
       <Image source={require('./assets/Logo.png')} style={{ alignSelf: 'center', width: 100, marginTop: 20, marginBottom: 20 }}></Image>
       <Text style={styles.TextContainer}>It's your name.</Text>
       <Text style={styles.TextContainer}>Own it.</Text>
-      <Text style={{ color: 'white', fontWeight: '400', textAlign: 'center', marginTop: 10, }}>Unlock the Avater State by forging a digital identity</Text>
+      <Text style={{ color: 'white', fontWeight: '400', textAlign: 'center', marginTop: 10, }}>Unlock tFe Avater State by forging a digital identity</Text>
       <View style={{ flexDirection: 'row', marginLeft: 32, marginTop: 20 }}>
         <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 20 }}>Player Tag</Text>
         <View style={{ position: 'relative', marginLeft: 5 }}>
@@ -25,10 +26,14 @@ function App(): React.JSX.Element {
           </View>
         </View>
       </View>
-      <TextInput style={{ borderWidth: 1, alignSelf: 'center', width: 350, top: 5, borderRadius: 10, borderColor: 'grey', }} placeholder='check player tag availability' placeholderTextColor={"grey"}></TextInput>
+      <TextInput style={{ borderWidth: 1, alignSelf: 'center', width: 350, top: 5, borderRadius: 10, borderColor: 'grey', paddingHorizontal: 20 }} placeholder='check player tag availability' placeholderTextColor={"grey"} ></TextInput>
       <Text style={{ color: 'grey', fontSize: 12, textAlign: 'center', marginTop: 5 }}>Must be xx character and xxx</Text>
+      <TextInput style={{ borderWidth: 1, alignSelf: 'center', width: 350, top: 5, borderRadius: 10, borderColor: 'grey', }} placeholder='Patrik' placeholderTextColor={"white"} ></TextInput>
+      <Image source={require('./assets/Man.png')} style={{ alignSelf: 'center' }}></Image>
+      <TouchableOpacity style={{ backgroundColor: '#588200', borderRadius: 10, height: 50, margin: 10, borderColor: 'white', borderWidth: .5 }}>
+        <Text style={{ textAlign: 'center', color: 'white', margin: 10, fontWeight: '700', fontSize: 15 }}>CONTINUE</Text>
+      </TouchableOpacity>
     </View>
-
   )
 }
 const styles = StyleSheet.create({
@@ -39,7 +44,6 @@ const styles = StyleSheet.create({
     color: 'white',
     textAlign: 'center'
   },
-
   sectionContainer: {
     marginTop: 32,
     paddingHorizontal: 24,
