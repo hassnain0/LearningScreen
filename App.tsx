@@ -1,102 +1,49 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
-import type {PropsWithChildren} from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
+  Image,
   StatusBar,
   StyleSheet,
   Text,
-  useColorScheme,
+  TextInput,
+  TouchableOpacity,
   View,
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
-
 function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+    <View style={{ flex: 1, backgroundColor: 'black', }}>
+      <StatusBar backgroundColor={'black'} />
+      <Image source={require('./assets/Logo.png')} style={{ alignSelf: 'center', width: 100, marginTop: 20, marginBottom: 20 }}></Image>
+      <Text style={styles.TextContainer}>It's your name.</Text>
+      <Text style={styles.TextContainer}>Own it.</Text>
+      <Text style={{ color: 'white', fontWeight: '400', textAlign: 'center', marginTop: 10, }}>Unlock tFe Avater State by forging a digital identity</Text>
+      <View style={{ flexDirection: 'row', marginLeft: 32, marginTop: 20 }}>
+        <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 20 }}>Player Tag</Text>
+        <View style={{ position: 'relative', marginLeft: 5 }}>
+          <View style={{ position: 'relative' }}>
+            <Image source={require('./assets/Ellipse.png')} style={{ width: 20, height: 20 }} />
+            <Image source={require('./assets/i.png')} style={{ position: 'absolute', top: 5, left: 8, width: 4, height: 12 }} />
+          </View>
         </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
+      </View>
+      <TextInput style={{ borderWidth: 1, alignSelf: 'center', width: 350, top: 5, borderRadius: 10, borderColor: 'grey', paddingHorizontal: 20 }} placeholder='check player tag availability' placeholderTextColor={"grey"} ></TextInput>
+      <Text style={{ color: 'grey', fontSize: 12, textAlign: 'center', marginTop: 5 }}>Must be xx character and xxx</Text>
+      <TextInput style={{ borderWidth: 1, alignSelf: 'center', width: 350, top: 5, borderRadius: 10, borderColor: 'grey', }} placeholder='Patrik' placeholderTextColor={"white"} ></TextInput>
+      <Image source={require('./assets/Man.png')} style={{ alignSelf: 'center' }}></Image>
+      <TouchableOpacity style={{ backgroundColor: '#588200', borderRadius: 10, height: 50, margin: 10, borderColor: 'white', borderWidth: .5 }}>
+        <Text style={{ textAlign: 'center', color: 'white', margin: 10, fontWeight: '700', fontSize: 15 }}>CONTINUE</Text>
+      </TouchableOpacity>
+    </View>
+  )
 }
-
 const styles = StyleSheet.create({
+
+  TextContainer: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: 'white',
+    textAlign: 'center'
+  },
   sectionContainer: {
     marginTop: 32,
     paddingHorizontal: 24,
